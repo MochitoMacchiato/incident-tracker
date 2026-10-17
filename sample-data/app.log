@@ -1,0 +1,12 @@
+2026-10-08 09:15:01 INFO Server started
+2026-10-08 09:15:07 INFO Request GET /health 200
+2026-10-08 09:16:12 ERROR Database connection failed
+2026-10-08 09:16:15 WARN Retrying connection (attempt 1)
+2026-10-08 09:16:20 ERROR Database connection failed
+2026-10-08 09:17:03 INFO Request GET /incidents 200
+2026-10-08 09:18:44 ERROR Timeout calling payment service
+2026-10-08 09:19:10 WARN Slow response: 2300ms
+2026-10-08 09:20:31 INFO Request POST /incidents 201
+2026-10-08 09:21:05 ERROR Database connection failed
+2026-10-08 09:22:00 INFO Request GET /incidents 200
+2026-10-08 09:23:15 ERROR Invalid token
