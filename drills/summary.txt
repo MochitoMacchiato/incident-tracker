@@ -1,0 +1,4 @@
+Total: 5
+high: 2
+medium: 2
+low: 1
