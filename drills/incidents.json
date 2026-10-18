@@ -1,0 +1,7 @@
+[
+  {"id": 1, "title": "API timeout", "severity": "high", "status": "open"},
+  {"id": 2, "title": "Disk almost full", "severity": "medium", "status": "open"},
+  {"id": 3, "title": "Typo on status page", "severity": "low", "status": "closed"},
+  {"id": 4, "title": "DB connection errors", "severity": "high", "status": "closed"},
+  {"id": 5, "title": "Slow login", "severity": "medium", "status": "open"}
+]
