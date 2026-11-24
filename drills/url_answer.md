@@ -1,0 +1,16 @@
+# What happens when you type a URL into a browser?
+
+Typing a URL into a browser may seem simple, but the process generally involves the client and the website following a **seven-stage process**.
+
+- **Stage 1**: The foremost thing that happens when someone types a URL (usually a website) in a browser is to check if there is a `memory of a similar query` to that same website. This is done by checking the `DNS cache`, a special temporary memory segment where IP addresses are stored for fast/quick look-ups.
+- **Stage 2**: We then need to know who we are talking to, and that is usually done by figuring out the `IP Address` of the website through a `DNS look-up`. For instance, `google.com` is just a convenient name convention that can be translated to an `IP address` which we can use to identify a node on a network.
+- **Stage 3**: Next, we need to establish a `TCP connection`; thus, there must be some sort of gate/door that lets you connect two devices, which what we call `ports`. There are thousands of dedicated ports for various services, but for this one, we use `port 443` since we use `HTTPS`, a networking protocol later discussed at stage 5. 
+- **Stage 4**: Afterwards, security must be ensured so a `TLS handshake` is performed to encrypt and protect the connection between the `client and the server` for possible malicious attacks.
+- **Stage 5**: Just then, a request is sent to the server via a network protocol `HTTP` (e.g., GET /path), particularly a `HTTPS GET request` where we add the `S` since a `TLS handshake` is done to secure the request.
+- **Stage 6**: As the client request for information with the web server, the server can then `query` a `database` for the intended output needed by the client. The outcome usually depends on the `status code` provided back by the server. For example, `200 OK` means that the request was successful, meanwhile, status codes like `4xx` and `5xx` usually means that an error happened that is caused by the `client (user)` and the `server`, respectively.
+- **Stage 7**: Finally, a successful request to google.com `renders` the HTML along with a requests for all other necessary content (e.g., CSS, JS images), completing the `seven-stage process`.
+
+
+## Side-Quest: “The same page returns 500. What changes, and what do I check first?”
+
+As I have mentioned previously, a status code of 500 is usually associated with a server-side error. Meaning, the request reached the server but it then failed while handling the request. Usually, what we check here first is the nature of the error through the status code. The first thing I would do is check the `server logs` in order to trace the source of the problem and do some proper fixing. Another thing is that `5xx` is the usual format for a server-side error, and since we have `500` returned, we can check documentation for what this implies if we don't know what it means. Usually, we can check the `header and its body content` which accompanies the status code for any relevant information for diagnosis and a fix but as a standard, production servers hide the details of an error so this is barely useful (but still an option).
