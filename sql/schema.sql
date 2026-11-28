@@ -11,6 +11,7 @@ CREATE TABLE incidents(
     id integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     service_id integer NOT NULL REFERENCES services (id),
     title text NOT NULL,
+    description text,
     severity text NOT NULL,
     status text NOT NULL DEFAULT 'open',
     created_at timestamptz NOT NULL DEFAULT now(),
